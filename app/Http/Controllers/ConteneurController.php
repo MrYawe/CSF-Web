@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Navire;
+use App\Http\Requests;
+use Input, Redirect;
+
 class ConteneurController extends Controller {
 
   /**
@@ -19,7 +23,7 @@ class ConteneurController extends Controller {
    */
   public function create()
   {
-    
+    return view('conteneur.create');
   }
 
   /**
@@ -29,7 +33,10 @@ class ConteneurController extends Controller {
    */
   public function store()
   {
-    
+    $input = Input::all();
+    Navire::create( $input );
+   
+    return Redirect::route('conteneur.create')->with('message', 'Conteneur crée !');
   }
 
   /**

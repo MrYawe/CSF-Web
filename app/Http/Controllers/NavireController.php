@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Navire;
+use App\Http\Requests;
+use Input, Redirect;
+
 class NavireController extends Controller {
 
   /**
@@ -9,7 +13,7 @@ class NavireController extends Controller {
    */
   public function index()
   {
-    
+
   }
 
   /**
@@ -19,7 +23,7 @@ class NavireController extends Controller {
    */
   public function create()
   {
-    
+    return view('navire.create');
   }
 
   /**
@@ -29,7 +33,10 @@ class NavireController extends Controller {
    */
   public function store()
   {
-    
+    $input = Input::all();
+    Navire::create( $input );
+   
+    return Redirect::route('navire.create')->with('message', 'Navire crée !');
   }
 
   /**

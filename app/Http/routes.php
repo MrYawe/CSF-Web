@@ -25,3 +25,5 @@ Route::resource('navire', 'NavireController');
 Route::resource('escale', 'EscaleController');
 Route::resource('mouvement', 'MouvementController');
 
+Route::model('navire', 'Task');
+
