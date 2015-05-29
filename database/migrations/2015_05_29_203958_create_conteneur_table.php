@@ -11,6 +11,12 @@ class CreateConteneurTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->integer('taille');
+			$table->integer('id_user')->unsigned();
+			$table->foreign('id_user')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('restrict')
+                  ->onUpdate('restrict');
 		});
 	}
 
