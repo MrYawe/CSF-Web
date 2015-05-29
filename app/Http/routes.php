@@ -19,3 +19,9 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('conteneur', 'ConteneurController');
+Route::resource('navire', 'NavireController');
+Route::resource('escale', 'EscaleController');
+Route::resource('mouvement', 'MouvementController');
+
