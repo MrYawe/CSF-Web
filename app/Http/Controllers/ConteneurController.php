@@ -9,7 +9,7 @@ class ConteneurController extends Controller {
    */
   public function index()
   {
-    
+		return view('conteneur'); 
   }
 
   /**
@@ -40,7 +40,7 @@ class ConteneurController extends Controller {
    */
   public function show($id)
   {
-    
+		echo 'coucou';
   }
 
   /**
