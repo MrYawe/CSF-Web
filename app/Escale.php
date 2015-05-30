@@ -8,6 +8,7 @@ class Escale extends Model {
 
 	protected $table = 'escale';
 	public $timestamps = true;
+	protected $fillable = ['id','date_entree', 'date_sortie','id_navire'];
 
 	public function concerns()
 	{

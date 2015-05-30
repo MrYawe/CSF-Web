@@ -1,5 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use Input;
+use Redirect;
+use App\Escale;
+use App\Navire;
+use Carbon\Carbon;
+
 class EscaleController extends Controller {
 
   /**
@@ -9,7 +16,7 @@ class EscaleController extends Controller {
    */
   public function index()
   {
-    
+		
   }
 
   /**
@@ -19,7 +26,9 @@ class EscaleController extends Controller {
    */
   public function create()
   {
-    
+		$navires = Navire::all();
+		var_dump($navires);
+		return view('escale.create',$navires);
   }
 
   /**
@@ -29,7 +38,12 @@ class EscaleController extends Controller {
    */
   public function store()
   {
-    
+		$inputs = Input::all();
+		$inputs['date_entree'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_entree'].'00:00');
+		$inputs['date_sortie'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_sortie'].'00:00');
+		Escale::create($inputs);
+ 
+		return Redirect::route('escale.index')->with('message', 'Escale créé avec succès !');
   }
 
   /**
@@ -40,7 +54,7 @@ class EscaleController extends Controller {
    */
   public function show($id)
   {
-    
+		return Redirect::route('escale.index');
   }
 
   /**
@@ -51,7 +65,7 @@ class EscaleController extends Controller {
    */
   public function edit($id)
   {
-    
+		return Redirect::route('escale.index');
   }
 
   /**
@@ -62,20 +76,8 @@ class EscaleController extends Controller {
    */
   public function update($id)
   {
-    
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy($id)
-  {
-    
-  }
-  
+		return Redirect::route('escale.index');
+  }  
 }
 
 ?>
