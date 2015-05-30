@@ -29,7 +29,8 @@ class EscaleController extends Controller {
   public function create()
   {
 		$navires = Navire::all();
-		return view('escale.create',compact('navires'));
+    var_dump($navires);
+		//return view('escale.create',compact('navires'));
   }
 
   /**

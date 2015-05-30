@@ -33,7 +33,7 @@
 				<a class="navbar-brand" href="#">Comic Sans Fluffy</a>
 			</div>
 
-			<div class="collapse navbar-collapse row">
+			<div class="collapse navbar-collapse row" id="blancaca">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
 					<li><a href="{{ url('navire/create') }}">Créer un navire</a></li>
@@ -46,8 +46,8 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
+						<li><a href="{{ url('/auth/login') }}">Connexion</a></li>
+						<li><a href="{{ url('/auth/register') }}">Inscription</a></li>
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>

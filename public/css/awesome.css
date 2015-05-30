@@ -7,14 +7,16 @@
   color:white;
 }
 
+html{
+  background-color: #ECECEC;
+  height:100%;
+}
 body{
+  height:100%;
+  background-color: #ECECEC;
   background-image: url(../image/bateau.png);
   background-repeat: no-repeat;
   background-position: right bottom;
-}
-
-html{
-  height:100%;
 }
 
 #fonce{
@@ -33,9 +35,14 @@ html{
 
 .navbar-collapse ul li a{
   font-size:16px;
+  padding-bottom:0;
 }
 
 #tamere{
   background-color:#3A92AA;
   border-color: #3A92AA;
+}
+
+#blancaca{
+  padding:0;
 }
