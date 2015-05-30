@@ -1,0 +1,41 @@
+#grossebarre{
+  height:60px;
+  background-color: #50AFC9;
+}
+
+#grossebarre a{
+  color:white;
+}
+
+body{
+  background-image: url(../image/bateau.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+html{
+  height:100%;
+}
+
+#fonce{
+  width:100%;
+  height:20px;
+  background-color: rgb(58, 146, 170);
+}
+
+#dieu{
+  border:0;
+}
+
+.navbar-header a{
+    font-size:27px;
+}
+
+.navbar-collapse ul li a{
+  font-size:16px;
+}
+
+#tamere{
+  background-color:#3A92AA;
+  border-color: #3A92AA;
+}

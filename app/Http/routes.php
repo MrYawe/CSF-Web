@@ -14,6 +14,10 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
+Route::get('about', function()
+{
+    return view('about');
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -24,6 +28,7 @@ Route::resource('conteneur', 'ConteneurController');
 Route::resource('navire', 'NavireController');
 Route::resource('escale', 'EscaleController');
 Route::resource('mouvement', 'MouvementController');
+
 
 Route::model('navire', 'Task');
 
