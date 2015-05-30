@@ -13,6 +13,7 @@
 							<div class="form-horizontal">
 								{!! Form::open(array('route' => 'conteneur.store', 'method' => 'POST')) !!}
 								<div class="form-group">
+                  {!! Form::label('id_user', 'Nom du client : ', ['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
                     <select name="id_user" id="id_user" class="form-control">
                     @foreach ($clients as $c)
@@ -22,7 +23,9 @@
 									</div>
 								</div>
 								<div class="form-group">
+                  {!! Form::label('taille', 'Taille:', ['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
+                    {!! Form::text('taille','',['class'=>'form-control']) !!}
 									</div>
 								</div>
 								<div class="form-group">
