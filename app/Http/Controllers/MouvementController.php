@@ -1,8 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Mouvement;
 use App\Escale;
 use App\Conteneur;
 use Input;
+use Redirect;
+use Carbon\Carbon;
 
 class MouvementController extends Controller {
 
@@ -39,7 +43,7 @@ class MouvementController extends Controller {
 		$inputs['date_mouvement'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_mouvement'].'00:00');
 		Mouvement::create($inputs);
  
-		return Redirect::route('mouvement.index')->with('message', 'Mouvement créé avec succès !');
+		return Redirect::route('mouvement.create')->with('message', 'Mouvement créé avec succès !');
   }
 
   /**

@@ -52,14 +52,14 @@ class EscaleController extends Controller {
    *
    * @return Response
    */
-  public function show($id)
+  public function show()
   {
-		$id = htmlspecialchars($_GET['id']);
+		$id = intval(htmlspecialchars($_GET['id']));
 		$chargements = Mouvement::all()->where('id_escale',$id)->where('est_chargement',1);
 		$dechargements = Mouvement::all()->where('id_escale',$id)->where('est_chargement',0);
 		$nb_chargements = $chargements->count();
 		$nb_dechargements = $dechargements->count();
-		return view('escale.show',compact('chargements','dechargements','nb_chargements','nb_dechargements'));
+		return view('escale.show',compact('chargements','dechargements','nb_chargements','nb_dechargements','id'));
   }
 
   /**

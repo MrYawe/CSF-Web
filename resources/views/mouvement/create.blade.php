@@ -21,6 +21,17 @@
 								</div>
 
 								<div class="form-group">
+									{!! Form::label('id_escale', 'Id de l\'escale : ',['class'=>'col-md-4 control-label']) !!}
+									<div class="col-md-6">
+										<select name="id_escale" id="id_escale" class="form-control">
+											@foreach ($escales as $e)
+												<option value="{{$e->id}}">{{$e->id}}</option>
+											@endforeach
+										</select>
+									</div>	
+								</div>
+								
+								<div class="form-group">
 									{!! Form::label('id_conteneur', 'Id du conteneur : ',['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
 										<select name="id_conteneur" id="id_conteneur" class="form-control">
@@ -34,9 +45,9 @@
 								<div class="form-group">
 									{!! Form::label('true', 'Choix du mouvement',['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
-										<select name="Chargement" id="Chargement" class="form-control">
-											<option value="true">Chargement</option>
-											<option value="false">Déchargement</option>
+										<select name="est_chargement" id="est_chargement" class="form-control">
+											<option value="1">Chargement</option>
+											<option value="0">Déchargement</option>
 										</select>
 									</div>
 								</div>	

@@ -5,6 +5,8 @@
 		<div class="alert alert-error">{!! session('error') !!}</div>
 	@endif
 	
+	<h2>Mouvements effectués pour l'escale {{$id}}</h2>
+	
 	<h3>Chargements effectués (NB = {{$nb_chargements}})</h3>
 	@foreach ($chargements as $c)
 		<p> {{$c->date_mouvement}} : chargement du conteneur {{$c->id_conteneur}} </p>
