@@ -20,8 +20,9 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid" id="grossebarre">
+	<div id="fonce"></div>
+	<nav class="navbar navbar-default" id="dieu">
+		<div class="container-fluid vertical-align" id="grossebarre">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle Navigation</span>
@@ -32,7 +33,7 @@
 				<a class="navbar-brand" href="#">Comic Sans Fluffy</a>
 			</div>
 
-			<div class="collapse navbar-collapse" >
+			<div class="collapse navbar-collapse row">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
 					<li><a href="{{ url('navire') }}">Créer un navire</a></li>
