@@ -12,19 +12,21 @@
 						<div class="panel-body">
 							<div class="form-horizontal">
 								{!! Form::open(array('route' => 'escale.store', 'method' => 'POST')) !!}
-								<div class="form-group">
+								<div class="form-group {!! $errors->has('date_entree') ? 'has-error' : '' !!}">
 									{!! Form::label('date_entree', 'Date entree : ', ['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
 										{!! Form::text('date_entree','',['class'=>'form-control']) !!}
+										{!! $errors->first('date_entree', '<small class="help-block">:message</small>') !!}
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group {!! $errors->has('date_sortie') ? 'has-error' : '' !!}">
 									{!! Form::label('date_sortie', 'Date sortie : ',['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
 										{!! Form::text('date_sortie','',['class'=>'form-control']) !!}
+										{!! $errors->first('date_sortie', '<small class="help-block">:message</small>') !!}
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group {!! $errors->has('id_navire') ? 'has-error' : '' !!}">
 									{!! Form::label('id_navire', 'Nom du navire : ',['class'=>'col-md-4 control-label']) !!}
 									<div class="col-md-6">
 										<select name="id_navire" id="id_navire" class="form-control">
@@ -32,6 +34,7 @@
 											<option value="{{$n->id}}">{{$n->nom}}</option>
 										@endforeach
 										</select>
+										{!! $errors->first('id_navire', '<small class="help-block">:message</small>') !!}
 									</div>	
 								</div>
 								<div class="form-group">

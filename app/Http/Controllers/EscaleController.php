@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Input;
 use Redirect;
 use App\Escale;
@@ -9,6 +10,12 @@ use App\Mouvement;
 use Carbon\Carbon;
 
 class EscaleController extends Controller {
+	
+	protected $rules = [		
+		'date_entree' => ['required', 'date', 'date_format:d-m-Y'],		
+		'date_sortie' => ['required','date', 'date_format:d-m-Y'],
+		'id_navire' => ['required']
+	];
 
   /**
    * Display a listing of the resource.
@@ -37,8 +44,9 @@ class EscaleController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
+		$this->validate($request, $this->rules);
 		$inputs = Input::all();
 		$inputs['date_entree'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_entree'].'00:00');
 		$inputs['date_sortie'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_sortie'].'00:00');

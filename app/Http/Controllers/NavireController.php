@@ -2,10 +2,15 @@
 
 use App\Navire;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use Input, Redirect;
 
 class NavireController extends Controller {
 
+	protected $rules = [		
+		'nom' => ['required','alpha','max:30'],		
+		'capacite' => ['required','numeric']
+	];
   /**
    * Display a listing of the resource.
    *
@@ -31,9 +36,10 @@ class NavireController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    $input = Input::all();
+		$this->validate($request, $this->rules);
+	$input = Input::all();
     Navire::create( $input );
    
     return Redirect::route('navire.create')->with('message', 'Navire crée !');

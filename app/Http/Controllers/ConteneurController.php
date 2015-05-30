@@ -3,10 +3,15 @@
 use App\User;
 use App\Conteneur;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use Input, Redirect;
 
 class ConteneurController extends Controller {
 
+	protected $rules = [		
+		'id_user' => ['required'],		
+		'taille' => ['required','numeric','between:1,2']
+	];
   /**
    * Display a listing of the resource.
    *
@@ -33,9 +38,10 @@ class ConteneurController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    $input = Input::all();
+		$this->validate($request, $this->rules);
+	$input = Input::all();
     Conteneur::create( $input );
    
     return Redirect::route('conteneur.create')->with('message', 'Conteneur crée !');

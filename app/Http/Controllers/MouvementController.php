@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Mouvement;
 use App\Escale;
 use App\Conteneur;
@@ -9,6 +10,13 @@ use Redirect;
 use Carbon\Carbon;
 
 class MouvementController extends Controller {
+	
+	protected $rules = [		
+		'date_mouvement' => ['required', 'date','date_format:d-m-Y'],		
+		'id_escale' => ['required'],
+		'id_conteneur' => ['required'],
+		'est_chargement' => ['required']
+	];
 
   /**
    * Display a listing of the resource.
@@ -37,8 +45,9 @@ class MouvementController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
+		$this->validate($request, $this->rules);
 		$inputs = Input::all();
 		$inputs['date_mouvement'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_mouvement'].'00:00');
 		Mouvement::create($inputs);
