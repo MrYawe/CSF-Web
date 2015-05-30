@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Escale;
+use App\Conteneur;
+
 class MouvementController extends Controller {
 
   /**
@@ -19,7 +22,9 @@ class MouvementController extends Controller {
    */
   public function create()
   {
-    
+		$escales = Escale::All();
+		$conteneurs = Conteneur::All();
+		return view('mouvement/create',compact('escales','conteneurs'));
   }
 
   /**

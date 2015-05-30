@@ -5,6 +5,7 @@ use Input;
 use Redirect;
 use App\Escale;
 use App\Navire;
+use App\Mouvement;
 use Carbon\Carbon;
 
 class EscaleController extends Controller {
@@ -49,12 +50,14 @@ class EscaleController extends Controller {
   /**
    * Display the specified resource.
    *
-   * @param  int  $id
    * @return Response
    */
   public function show($id)
   {
-		return Redirect::route('escale.index');
+		$id = htmlspecialchars($_GET['id']);
+		$chargements = Mouvement::all()->where('id_escale',$id)->andWhere('est_chargement',1);
+		$dechargements = Mouvement::all()->where('id_escale',$id)->andWhere('est_chargement',0);
+		return view('escale.show',compact('chargements','dechargements'));
   }
 
   /**

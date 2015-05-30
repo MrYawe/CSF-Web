@@ -47,7 +47,7 @@ class ConteneurController extends Controller {
    */
   public function show($id)
   {
-		echo 'coucou';
+		
   }
 
   /**

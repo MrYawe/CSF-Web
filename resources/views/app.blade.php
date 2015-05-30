@@ -38,6 +38,8 @@
 					<li><a href="{{ url('/') }}">Home</a></li>
 					<li><a href="{{ url('navire/create') }}">Créer un navire</a></li>
 					<li><a href="{{ url('escale/create') }}">Créer une escale</a></li>
+					<li><a href="{{ url('conteneur/create') }}">Créer un conteneur</a></li>
+					<li><a href="{{ url('mouvement/create') }}">Créer un mouvement</a></li>
 					<li><a href="{{ url('escale') }}">Choix d'une escale</a></li>
 					<li><a href="{{ url('about') }}">A propos</a></li>
 				</ul>
