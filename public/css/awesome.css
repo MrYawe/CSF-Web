@@ -5,3 +5,14 @@
 #grossebarre a{
   color:white;
 }
+
+body{
+  background-image: url(../image/bateau.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 200px 200px;
+}
+
+html{
+  height:100%;
+}
