@@ -33,7 +33,7 @@
 				<a class="navbar-brand" href="#">Comic Sans Fluffy</a>
 			</div>
 
-			<div class="collapse navbar-collapse row">
+			<div class="collapse navbar-collapse row" id="blancaca">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
 					<li><a href="{{ url('navire/create') }}">Créer un navire</a></li>
