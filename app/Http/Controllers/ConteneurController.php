@@ -38,7 +38,7 @@ class ConteneurController extends Controller {
   public function store()
   {
     $input = Input::all();
-    Navire::create( $input );
+    Conteneur::create( $input );
    
     return Redirect::route('conteneur.create')->with('message', 'Conteneur crée !');
   }
