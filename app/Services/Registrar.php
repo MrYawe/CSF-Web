@@ -18,6 +18,8 @@ class Registrar implements RegistrarContract {
 			'name' => 'required|max:255',
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:6',
+			'type' => 'required|',
+			'adresse' => 'required|min:2|max:255',
 		]);
 	}
 
@@ -33,6 +35,8 @@ class Registrar implements RegistrarContract {
 			'name' => $data['name'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
+			'id_type' => $data['type'],
+			'adresse' => $data['adresse'],
 		]);
 	}
 

@@ -22,14 +22,32 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+							<label class="col-md-4 control-label">Type de compte</label>
+							<div class="col-md-6">
+								<select class="form-control" name="type" value="{{ old('type') }}">
+									<option value="1">Client</option>
+									<option value="2">Companie</option>
+									<option value="3">Agent portuaire</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Nom</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">Adresse</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="adresse" value="{{ old('adresse') }}">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label">Adresse e-mail</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
