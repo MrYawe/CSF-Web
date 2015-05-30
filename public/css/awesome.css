@@ -38,6 +38,14 @@ body{
   padding-bottom:0;
 }
 
+#grossebarre .navbar-collapse ul li ul{
+  background-color: #50AFC9;
+}
+
+#grossebarre .navbar-collapse ul li ul li :hover{
+  background-color: #50AFC9;
+}
+
 #tamere{
   background-color:#3A92AA;
   border-color: #3A92AA;
@@ -45,4 +53,8 @@ body{
 
 #blancaca{
   padding:0;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: #50AFC9;
 }
