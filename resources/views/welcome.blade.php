@@ -39,10 +39,10 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="content">
+			<a href="home"><div class="content">
 				<div class="title">Comic Sans Fluffy</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
+			</div></a>
 		</div>
 	</body>
 </html>

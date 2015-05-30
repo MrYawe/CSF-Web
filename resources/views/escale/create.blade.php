@@ -36,7 +36,7 @@
 								</div>
 								<div class="form-group">
 									<div class="col-md-6 col-md-offset-4">
-										{!! Form::submit() !!}
+										{!! Form::submit('Créer escale',['class'=>'btn btn-primary', 'id'=>'tamere']) !!}
 									</div>
 								</div>
 								{!! Form::close() !!}

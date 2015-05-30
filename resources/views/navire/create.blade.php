@@ -10,7 +10,7 @@
 	 				<div class="panel-body">
 	 					<div class="form-horizontal">
 	 						{!! Form::model(new App\Navire, ['route' => ['navire.store']]) !!}
-					        @include('navire/_form', ['submit_text' => 'Create Project'])
+					        @include('navire/_form', ['submit_text' => 'Créer navire'])
 					    	{!! Form::close() !!}
 	 					</div>
 					</div>
