@@ -24,7 +24,9 @@ class ConteneurController extends Controller {
    */
   public function create()
   {
-    $clients = User::where('id_type', '1');
+    $clients = User::where('id_type', '1')->get();
+    //$clients = User::all();
+    //var_dump($clients);
     return view('conteneur.create', compact('clients'));
   }
 
