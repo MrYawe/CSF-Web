@@ -2,6 +2,7 @@
 
 use App\Escale;
 use App\Conteneur;
+use Input;
 
 class MouvementController extends Controller {
 
@@ -34,7 +35,11 @@ class MouvementController extends Controller {
    */
   public function store()
   {
-    
+		$inputs = Input::all();
+		$inputs['date_mouvement'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_mouvement'].'00:00');
+		Mouvement::create($inputs);
+ 
+		return Redirect::route('mouvement.index')->with('message', 'Mouvement créé avec succès !');
   }
 
   /**
