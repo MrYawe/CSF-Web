@@ -16,7 +16,8 @@ class EscaleController extends Controller {
    */
   public function index()
   {
-		return Redirect::route('escale.create');
+		$escales = Escale::with('concerns')->get();
+		return view('escale.index',compact('escales'));
   }
 
   /**
@@ -42,7 +43,7 @@ class EscaleController extends Controller {
 		$inputs['date_sortie'] = Carbon::createFromFormat('d-m-Y H:i', $inputs['date_sortie'].'00:00');
 		Escale::create($inputs);
  
-		return Redirect::route('escale.create')->with('message', 'Escale créée avec succès !');
+		return Redirect::route('escale.index')->with('message', 'Escale créée avec succès !');
   }
 
   /**
@@ -53,7 +54,7 @@ class EscaleController extends Controller {
    */
   public function show($id)
   {
-		return Redirect::route('escale.create');
+		return Redirect::route('escale.index');
   }
 
   /**
@@ -64,7 +65,7 @@ class EscaleController extends Controller {
    */
   public function edit($id)
   {
-		return Redirect::route('escale.create');
+		return Redirect::route('escale.index');
   }
 
   /**
@@ -75,7 +76,7 @@ class EscaleController extends Controller {
    */
   public function update($id)
   {
-		return Redirect::route('escale.create');
+		return Redirect::route('escale.index');
   }  
 }
 

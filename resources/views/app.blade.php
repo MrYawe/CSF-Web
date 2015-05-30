@@ -36,8 +36,9 @@
 			<div class="collapse navbar-collapse row">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
-					<li><a href="{{ url('navire') }}">Créer un navire</a></li>
-					<li><a href="{{ url('escale') }}">Créer une escale</a></li>
+					<li><a href="{{ url('navire/create') }}">Créer un navire</a></li>
+					<li><a href="{{ url('escale/create') }}">Créer une escale</a></li>
+					<li><a href="{{ url('escale') }}">Choix d'une escale</a></li>
 					<li><a href="{{ url('about') }}">A propos</a></li>
 				</ul>
 

@@ -12,12 +12,12 @@ class Escale extends Model {
 
 	public function concerns()
 	{
-		return $this->hasOne('Navire');
+		return $this->belongsTo('App\Navire');
 	}
 
 	public function mouvements()
 	{
-		return $this->hasMany('Mouvement');
+		return $this->hasMany('App\Mouvement');
 	}
 
 }
