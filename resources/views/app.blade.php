@@ -7,6 +7,7 @@
 	<title>Comic Sans Fluffy</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/awesome.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -20,7 +21,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-default">
-		<div class="container-fluid">
+		<div class="container-fluid" id="grossebarre">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle Navigation</span>
@@ -31,7 +32,7 @@
 				<a class="navbar-brand" href="#">Comic Sans Fluffy</a>
 			</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" >
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
 				</ul>
