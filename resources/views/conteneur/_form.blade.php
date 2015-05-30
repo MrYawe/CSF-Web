@@ -1,6 +1,6 @@
 <div class="form-group">
-	{!! Form::label('id_client', 'Nom du client : ') !!}
-	<select name="id_client" id="id_client">
+	{!! Form::label('id_user', 'Nom du client : ') !!}
+	<select name="id_user" id="id_user">
 	@foreach ($clients as $c)
 		<option value="{{$c->id}}">{{$c->name}}</option>
 	@endforeach
