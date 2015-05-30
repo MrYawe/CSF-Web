@@ -36,10 +36,10 @@
 			<div class="collapse navbar-collapse row" id="blancaca">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
-					<li><a href="{{ url('navire/create') }}">Créer un navire</a></li>
-					<li><a href="{{ url('escale/create') }}">Créer une escale</a></li>
-					<li><a href="{{ url('conteneur/create') }}">Créer un conteneur</a></li>
-					<li><a href="{{ url('mouvement/create') }}">Créer un mouvement</a></li>
+					<li><a href="{{ url('navire/create') }}">Créer navire</a></li>
+					<li><a href="{{ url('escale/create') }}">Créer escale</a></li>
+					<li><a href="{{ url('conteneur/create') }}">Créer conteneur</a></li>
+					<li><a href="{{ url('mouvement/create') }}">Créer mouvement</a></li>
 					<li><a href="{{ url('escale') }}">Choix d'une escale</a></li>
 					<li><a href="{{ url('about') }}">A propos</a></li>
 				</ul>
