@@ -18,6 +18,8 @@ Route::get('about', function()
 {
     return view('about');
 });
+Route::get('profil/{n}', 'UserController@profil');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -30,4 +32,5 @@ Route::resource('escale', 'EscaleController');
 Route::resource('mouvement', 'MouvementController');
 
 Route::model('navire', 'Task');
+
 
