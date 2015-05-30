@@ -41,6 +41,7 @@
 		<div class="container">
 			<a href="home"><div class="content">
 				<div class="title">Comic Sans Fluffy</div>
+				<div style="font-size:3em;" class="title">Click here</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div></a>
 		</div>
